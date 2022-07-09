@@ -8,3 +8,4 @@ See https://my-ddev-lab.mandrasch.eu/tutorials/cms-and-frameworks/laravel.html#
 
 - [ ] SSL error currently, see https://my-ddev-lab.mandrasch.eu/tutorials/cms-and-frameworks/laravel.html#breeze
 - [ ] How to just use npm (instead of pnpm?)
+- [ ] How can we check the vite logs for errors? (Is it necessary?)
