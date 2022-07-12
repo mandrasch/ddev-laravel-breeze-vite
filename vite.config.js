@@ -8,4 +8,9 @@ export default defineConfig({
             'resources/js/app.js',
         ]),
     ],
+    server: {
+        https: true,
+        host: 'laravel-breeze-test-vite.ddev.site',
+        port: 3001
+    },
 });
