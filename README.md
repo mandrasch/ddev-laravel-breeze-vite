@@ -56,18 +56,34 @@ export default defineConfig({
 });
 ```
 
-There 
+**IMPORTANT:** There was a bug in [laravel-vite-plugin](https://www.npmjs.com/package/laravel-vite-plugin), which did not use hmr.host for the blade @vite template. Update to v.0.3 with
 
-Important - visit `login/`-page (https://ddev-laravel-breeze-vite.ddev.site/login), vite is not loaded on index page:
+```bash
+ddev exec npm install laravel-vite-plugin@latest
+```
+
+Start `vite-serve`:
+
+```bash
+ddev vite-serve start
+```
+
+**Important:** Visit `login/`-page (https://ddev-laravel-breeze-vite.ddev.site/login), vite is not loaded on index page `/`:
 
 ```bash
 ddev launch /login
 ```
 
+Now `https://ddev-laravel-breeze-vite.ddev.site:3001/@vite/client` is included correctly, but it gives for my local setup:
+
+```
+502: Unresponsive/broken ddev back-end site.
+This is the ddev-router container: The back-end webserver at the URL you specified is not responding. You may want to use "ddev restart" to restart the site.
+```
+
 ## Notes / questions
 
-- [ ] Current error: 
-- [ ] How to just use npm (instead of pnpm?)
+- [ ] How can we just use npm (instead of pnpm?)
 - [ ] How can we check the vite logs for errors?
 
 ## Discussions / background
