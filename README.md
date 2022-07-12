@@ -58,7 +58,7 @@ export default defineConfig({
 });
 ```
 
-**IMPORTANT:** There was a bug in [laravel-vite-plugin](https://www.npmjs.com/package/laravel-vite-plugin), which did not use hmr.host for the blade @vite template. Update to v.0.3 with
+**IMPORTANT:** There was a bug in [laravel-vite-plugin](https://www.npmjs.com/package/laravel-vite-plugin), which did not use hmr.host for the blade @vite template. Update to [v.0.3](https://github.com/laravel/vite-plugin/releases/tag/v0.3.0) with
 
 ```bash
 ddev exec npm install laravel-vite-plugin@latest
