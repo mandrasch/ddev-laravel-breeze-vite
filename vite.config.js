@@ -10,7 +10,9 @@ export default defineConfig({
     ],
     server: {
         https: true,
-        host: 'laravel-breeze-test-vite.ddev.site',
+        hmr : {
+            host: 'ddev-laravel-breeze-vite.ddev.site'
+        },
         port: 3001
     },
 });
