@@ -48,16 +48,27 @@ export default defineConfig({
     /* ADDED: */
     server: {
         https: true,
-        host: 'laravel-breeze-test-vite.ddev.site',
+        hmr : {
+            host: 'ddev-laravel-breeze-vite.ddev.site'
+        },
+        port: 3001
     },
 });
 ```
 
+There 
+
+Important - visit `login/`-page (https://ddev-laravel-breeze-vite.ddev.site/login), vite is not loaded on index page:
+
+```bash
+ddev launch /login
+```
+
 ## Notes / questions
 
-- [ ] SSL error currently, see https://my-ddev-lab.mandrasch.eu/tutorials/cms-and-frameworks/laravel.html#breeze
+- [ ] Current error: 
 - [ ] How to just use npm (instead of pnpm?)
-- [ ] How can we check the vite logs for errors? (Is it necessary?)
+- [ ] How can we check the vite logs for errors?
 
 ## Discussions / background
 
