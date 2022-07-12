@@ -32,6 +32,8 @@ Changed VITE_PROJECT_DIR=frontend to VITE_PROJECT_DIR=./ in .ddev/docker-compose
       - VITE_PROJECT_DIR=./
 ```
 
+Run `ddev restart` afterwards. 
+
 Change port, host, https in vite.config.js:
 
 ```javascript
