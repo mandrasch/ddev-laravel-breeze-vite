@@ -76,12 +76,11 @@ ddev vite-serve start
 ddev launch /login
 ```
 
-Now `https://ddev-laravel-breeze-vite.ddev.site:3001/@vite/client` is included correctly, but it gives for my local setup:
+Now `https://ddev-laravel-breeze-vite.ddev.site:3001/@vite/client` is included correctly, but it gives broken backend...
 
-```
-502: Unresponsive/broken ddev back-end site.
-This is the ddev-router container: The back-end webserver at the URL you specified is not responding. You may want to use "ddev restart" to restart the site.
-```
+### Current state
+
+- Works with `http`, but not `https`, see: https://github.com/torenware/ddev-viteserve/issues/2
 
 ## Notes / questions
 
