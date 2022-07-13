@@ -8,11 +8,14 @@ export default defineConfig({
             'resources/js/app.js',
         ]),
     ],
-    server: {
-        https: true,
-        hmr : {
+     /*server:{
+        host: 'ddev-laravel-breeze-vite.ddev.site',
+        port:3001,
+        https:true,
+       hmr:{
+            port: 443,
+            protocol: "wss",
             host: 'ddev-laravel-breeze-vite.ddev.site'
-        },
-        port: 3001
-    },
+        }
+    }*/
 });
