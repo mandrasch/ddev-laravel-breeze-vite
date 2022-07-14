@@ -1,6 +1,6 @@
 # ddev-laravel-breeze-vite
 
-WIP, vite meets DDEV
+WIP, vite meets DDEV meets new Laravel integration
 
 ```
 ddev start
@@ -79,6 +79,10 @@ export default defineConfig({
 
 - https://my-ddev-lab.mandrasch.eu/tutorials/cms-and-frameworks/laravel.html#breeze 
 - https://discord.com/channels/664580571770388500/993996599506259978 
+- https://github.com/torenware/ddev-viteserve/issues/2
+- https://github.com/iammati/vite-ddev
+- https://github.com/torenware/ddev-viteserve
+- https://github.com/nystudio107/craft-vite/ (uses `ports` which is not recommended) via https://craftquest.io/courses/ddev-and-craft-cms-quick-start-guide/43674
 
 ## License
 
