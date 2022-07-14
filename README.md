@@ -1,6 +1,6 @@
 # ddev-laravel-breeze-vite
 
-WIP, experimental demo repo for https://github.com/torenware/ddev-viteserve
+WIP, vite meets DDEV
 
 ```
 ddev start
