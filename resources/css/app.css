@@ -1,3 +1,9 @@
+label{
+    color:red !important;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+

@@ -2,6 +2,23 @@
 
 WIP, experimental demo repo for https://github.com/torenware/ddev-viteserve
 
+```
+ddev start
+ddev exec npm install
+ddev exec npm run dev 
+# paste https://ddev-laravel-breeze-vite.ddev.site:3000 into public/hot
+```
+
+**Important:** Visit `login/`-page (https://ddev-laravel-breeze-vite.ddev.site/login), vite is not loaded on index page `/`:
+
+```bash
+ddev launch /login
+```
+
+## Current state
+
+- `public/hot` must be overwritten with `https://ddev-laravel-breeze-vite.ddev.site:3000` after running vite, maybe a PR to laravel/vite-plugin is needed (to have something like `DEV_SERVER_URL` https://laravel-vite.dev/guide/essentials/development.html#using-http-over-tls)
+
 ## How was this created?
 
 ```bash
@@ -18,21 +35,22 @@ ddev composer require laravel/breeze --dev && \
   ddev artisan breeze:install && \
   ddev artisan migrate && \
   ddev exec npm install
-
-# Vite integration via https://github.com/torenware/ddev-viteserve
-# Thanks very much to @torenware!
-ddev get torenware/ddev-viteserve
 ```
 
-Changed VITE_PROJECT_DIR=frontend to VITE_PROJECT_DIR=./ in .ddev/docker-compose.viteserve.yaml:
+Added `.ddev/docker-compose.vite.yaml` and run `ddev restart`:
 
 ```yaml
+version: '3.6'
+services:
+  web:
+    expose:
+      - '3000'
     environment:
-      # Set the vite-enabled js project here:
-      - VITE_PROJECT_DIR=./
+      - HTTP_EXPOSE=${DDEV_ROUTER_HTTP_PORT}:80,${DDEV_MAILHOG_PORT}:8025,3001:3000
+      - HTTPS_EXPOSE=${DDEV_ROUTER_HTTPS_PORT}:80,${DDEV_MAILHOG_HTTPS_PORT}:8025,3000:3000
+      # HTTPS 5133 -> 5133, HTTP 5134->5133,
+      # see https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/
 ```
-
-Run `ddev restart` afterwards. 
 
 Change port, host, https in vite.config.js:
 
@@ -47,46 +65,15 @@ export default defineConfig({
             'resources/js/app.js',
         ]),
     ],
-    /* ADDED: */
     server: {
-        https: true,
-        hmr : {
-            host: 'ddev-laravel-breeze-vite.ddev.site'
-        },
-        port: 3001
+        // respond to all network requests
+        host: '0.0.0.0',
+        // we need a strict port to match on PHP side, vite otherwise tries different ports if 3000 is used
+        strictPort: true,
+        port: 3000
     },
 });
 ```
-
-**IMPORTANT:** There was a bug in [laravel-vite-plugin](https://www.npmjs.com/package/laravel-vite-plugin), which did not use hmr.host for the blade @vite template. Update to [v.0.3](https://github.com/laravel/vite-plugin/releases/tag/v0.3.0) with
-
-```bash
-ddev exec npm install laravel-vite-plugin@latest
-```
-
-Start `vite-serve`:
-
-```bash
-ddev vite-serve start
-```
-
-**Important:** Visit `login/`-page (https://ddev-laravel-breeze-vite.ddev.site/login), vite is not loaded on index page `/`:
-
-```bash
-ddev launch /login
-```
-
-Now `https://ddev-laravel-breeze-vite.ddev.site:3001/@vite/client` is included correctly, but it gives for my local setup:
-
-```
-502: Unresponsive/broken ddev back-end site.
-This is the ddev-router container: The back-end webserver at the URL you specified is not responding. You may want to use "ddev restart" to restart the site.
-```
-
-## Notes / questions
-
-- [ ] How can we just use npm (instead of pnpm?)
-- [ ] How can we check the vite logs for errors?
 
 ## Discussions / background
 

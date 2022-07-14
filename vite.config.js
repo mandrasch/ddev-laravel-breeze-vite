@@ -8,14 +8,11 @@ export default defineConfig({
             'resources/js/app.js',
         ]),
     ],
-     /*server:{
-        host: 'ddev-laravel-breeze-vite.ddev.site',
-        port:3001,
-        https:true,
-       hmr:{
-            port: 443,
-            protocol: "wss",
-            host: 'ddev-laravel-breeze-vite.ddev.site'
-        }
-    }*/
+    server: {
+        // respond to all network requests
+        host: '0.0.0.0',
+        // we need a strict port to match on PHP side, vite otherwise tries different ports if 3000 is used
+        strictPort: true,
+        port: 3000
+    },
 });
