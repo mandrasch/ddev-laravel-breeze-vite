@@ -1,6 +1,6 @@
 # ddev-laravel-breeze-vite
 
-WIP, vite meets DDEV meets new Laravel integration
+Work in Progress, vite meets DDEV meets new official Laravel integration
 
 ```
 ddev start
@@ -18,6 +18,7 @@ ddev launch /login
 ## Current state
 
 - `public/hot` must be overwritten with `https://ddev-laravel-breeze-vite.ddev.site:3000` after running vite, maybe a PR to laravel/vite-plugin is needed (to have something like `DEV_SERVER_URL` https://laravel-vite.dev/guide/essentials/development.html#using-http-over-tls)
+    - Submitted as feature request to laravel/vite-plugin: https://github.com/laravel/vite-plugin/issues/83
 
 ## How was this created?
 
