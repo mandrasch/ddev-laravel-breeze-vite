@@ -9,10 +9,22 @@ export default defineConfig({
         ]),
     ],
     server: {
-        // respond to all network requests
-        host: '0.0.0.0',
-        // we need a strict port to match on PHP side, vite otherwise tries different ports if 3000 is used
+        // respond to all network requests (same as '0.0.0.0')
+        host: true,
+        // we need a strict port to match on PHP side
         strictPort: true,
-        port: 3000
+        port: 5173,
+        hmr: {
+            // Force the Vite client to connect via SSL
+            // This will also force a "https://" URL in the hot file
+            protocol: 'wss',
+            // The host where the Vite dev server can be accessed
+            // This will also force this host to be written to the hot file
+            host: 'my-laravel-project.ddev.site',
+            // server: false,
+            clientPort: 5173,
+            port: 5175 // must be different,
+            // see: https://vitejs.dev/config/server-options.html#server-hmr
+        }
     },
 });
