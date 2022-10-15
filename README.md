@@ -1,3 +1,21 @@
+## Outdated example
+
+Please see https://my-ddev-lab.mandrasch.eu/tutorials/nodejs-tools/vite.html for latest infos. 🚀
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<hr>
+
+Old docs:
+
+
 # ddev-laravel-breeze-vite
 
 Work in Progress, vite meets DDEV meets new official Laravel integration
