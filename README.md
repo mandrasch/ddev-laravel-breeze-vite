@@ -47,7 +47,7 @@ Laravel Breeze overwrite previous changes, add `.server` again for DDEV:
             protocol: 'wss',
             // The host where the Vite dev server can be accessed
             // This will also force this host to be written to the hot file
-            host: 'ddev-laravel-vite.ddev.site', // TODO: How can we get it automatically?
+            host: `${process.env.DDEV_HOSTNAME}`,
         }
     },
 ```
@@ -55,6 +55,7 @@ Laravel Breeze overwrite previous changes, add `.server` again for DDEV:
 ## Further resources
 
 - https://github.com/mandrasch/ddev-laravel-vite/
+- See also https://github.com/tyler36/lara10-base-demo
 - Connect with the DDEV community on [Discord](https://discord.gg/hCZFfAMc5k)
 
 More experiments and info about DDEV + vite: https://my-ddev-lab.mandrasch.eu/
