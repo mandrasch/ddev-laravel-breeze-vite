@@ -1,8 +1,6 @@
 # ddev-laravel-breeze-vite
 
-**This repository is based on https://github.com/mandrasch/ddev-laravel-vite, see https://github.com/mandrasch/ddev-laravel-vite#how-was-this-created for the first steps of installation Laravel.**
-
-_Full documentation: [my-ddev-lab.mandrasch.eu](https://my-ddev-lab.mandrasch.eu/tutorials/nodejs-tools/vite.html)_
+**This repository is based on https://github.com/mandrasch/ddev-laravel-vite**
 
 Local URL: https://ddev-laravel-breeze-vite.ddev.site
 
@@ -53,3 +51,12 @@ Laravel Breeze overwrite previous changes, add `.server` again for DDEV:
         }
     },
 ```
+
+## Further resources
+
+- https://github.com/mandrasch/ddev-laravel-vite/
+- Connect with the DDEV community on [Discord](https://discord.gg/hCZFfAMc5k)
+
+More experiments and info about DDEV + vite: https://my-ddev-lab.mandrasch.eu/
+
+Thanks to the DDEV maintainers and DDEV open source community! 💚
